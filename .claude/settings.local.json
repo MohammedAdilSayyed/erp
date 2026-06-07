@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(node -e \"const s=require\\('node:sqlite'\\); console.log\\('node:sqlite available'\\);\")",
+      "Bash(npm run *)",
+      "Bash(node *)",
+      "Bash(npm start *)",
+      "Bash(curl -sS http://localhost:4000/api/health)",
+      "Bash(netstat -ano)",
+      "Bash(taskkill *)",
+      "Bash(curl -sS -X POST http://localhost:4000/api/auth/login -H 'Content-Type: application/json' -d '{\"email\":\"admin@college.edu\",\"password\":\"admin123\"}')",
+      "Bash(curl -sS -X POST http://localhost:4000/api/auth/login -H 'Content-Type: application/json' -d '{\"email\":\"admin@college.edu\",\"password\":\"admin123\"}' -v)",
+      "Bash(curl -sS -o /dev/null -w \"HTTP %{http_code}  size=%{size_download}\\\\n\" http://localhost:4000/)",
+      "Bash(curl -sS -o /dev/null -w \"HTTP %{http_code}  size=%{size_download}\\\\n\" http://localhost:4000/css/styles.css)",
+      "Bash(curl -sS -o /dev/null -w \"HTTP %{http_code}  size=%{size_download}\\\\n\" http://localhost:4000/js/app.js)",
+      "Bash(curl -sS -o /dev/null -w \"HTTP %{http_code}  size=%{size_download}\\\\n\" http://localhost:4000/js/api.js)",
+      "Bash(curl -sS -o /dev/null -w \"HTTP %{http_code}  size=%{size_download}\\\\n\" http://localhost:4000/js/pages.js)",
+      "Bash(curl -sS -X POST http://localhost:4000/api/auth/login -H 'Content-Type: application/json' -d '{\"email\":\"librarian@college.edu\",\"password\":\"lib123\"}')",
+      "Bash(curl -sS http://localhost:4000/api/auth/me -H \"Authorization: Bearer fake.token.here\" -w \"\\\\nHTTP %{http_code}\\\\n\")",
+      "Bash(curl -sS http://localhost:4000/api/dashboard/stats -w \"\\\\nHTTP %{http_code}\\\\n\")",
+      "Bash(curl -sS -X POST http://localhost:4000/api/auth/login -H 'Content-Type: application/json' -d '{\"email\":\"admin@college.edu\",\"password\":\"wrong\"}' -w \"\\\\nHTTP %{http_code}\\\\n\")",
+      "Bash(curl -sS -X POST http://localhost:4000/api/students -H \"Authorization: Bearer $\\(curl -sS -X POST http://localhost:4000/api/auth/login -H 'Content-Type: application/json' -d '{\"email\":\"admin@college.edu\",\"password\":\"admin123\"}')"
+    ]
+  }
+}

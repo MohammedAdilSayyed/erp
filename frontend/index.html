@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>College ERP System</title>
+<link rel="stylesheet" href="/css/styles.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- =========================================
+     LOGIN VIEW
+========================================= -->
+<div id="loginView" class="login-wrap">
+  <div class="login-card">
+    <div class="login-brand">
+      <div class="brand-logo">🎓</div>
+      <h1>College ERP</h1>
+      <p>Sign in to continue</p>
+    </div>
+    <form id="loginForm" class="login-form" autocomplete="on" novalidate>
+      <label>
+        <span>Email</span>
+        <input type="email" name="email" id="loginEmail" placeholder="you@college.edu" required />
+      </label>
+      <label>
+        <span>Password</span>
+        <input type="password" name="password" id="loginPassword" placeholder="••••••••" required minlength="1" />
+      </label>
+      <button type="submit" class="btn btn-primary btn-block" id="loginSubmit">
+        <span class="btn-label">Sign in</span>
+      </button>
+      <div id="loginError" class="form-error" hidden></div>
+    </form>
+    <div class="login-hint">
+      <strong>Demo accounts</strong>
+      <ul>
+        <li><code>admin@college.edu</code> / <code>admin123</code></li>
+        <li><code>sarah.johnson@college.edu</code> / <code>faculty123</code></li>
+        <li><code>aarav.sharma@student.college.edu</code> / <code>student123</code></li>
+        <li><code>librarian@college.edu</code> / <code>lib123</code></li>
+        <li><code>accountant@college.edu</code> / <code>acc123</code></li>
+      </ul>
+    </div>
+  </div>
+  <div class="login-side">
+    <div class="login-side-inner">
+      <h2>Run your college, beautifully.</h2>
+      <p>One platform for students, faculty, finance, library, and hostels — production-grade and ready to deploy.</p>
+      <ul class="side-list">
+        <li>📚 Course &amp; enrollment management</li>
+        <li>📝 Attendance, grades &amp; report cards</li>
+        <li>💰 Fee collection &amp; receipts</li>
+        <li>📖 Library catalog &amp; circulation</li>
+        <li>🏠 Hostel allocation &amp; warden ops</li>
+        <li>🔐 Role-based access, audit logs</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================
+     APP SHELL
+========================================= -->
+<div id="appView" class="app-shell" hidden>
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-logo">🎓</span>
+      <div>
+        <div class="brand-name">College ERP</div>
+        <div class="brand-sub" id="sidebarRole">—</div>
+      </div>
+    </div>
+    <nav id="sidebarNav" class="sidebar-nav"></nav>
+    <div class="sidebar-foot">
+      <button id="logoutBtn" class="btn btn-ghost btn-block">⏻ Sign out</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="topbar-left">
+        <h2 id="pageTitle">Dashboard</h2>
+        <div class="breadcrumb" id="pageBreadcrumb">/ Dashboard</div>
+      </div>
+      <div class="topbar-right">
+        <div class="search">
+          <input type="search" id="globalSearch" placeholder="Search… (Ctrl+K)" />
+        </div>
+        <div class="user-chip" id="userChip">
+          <div class="avatar" id="userAvatar">?</div>
+          <div>
+            <div id="userName">—</div>
+            <div class="muted" id="userMeta">—</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="pageContent" class="page-content">
+      <div class="page-loading">Loading…</div>
+    </section>
+  </main>
+
+  <div id="toastContainer" class="toast-container"></div>
+  <div id="modalContainer"></div>
+</div>
+
+<!-- =========================================
+     CHANGE PASSWORD MODAL
+========================================= -->
+<dialog id="changePwdDialog" class="modal">
+  <form method="dialog" id="changePwdForm" class="modal-card">
+    <header><h3>Change password</h3></header>
+    <label><span>Current password</span><input type="password" name="currentPassword" required /></label>
+    <label><span>New password (min 8 chars)</span><input type="password" name="newPassword" minlength="8" required /></label>
+    <label><span>Confirm new password</span><input type="password" name="confirm" minlength="8" required /></label>
+    <div id="changePwdError" class="form-error" hidden></div>
+    <footer>
+      <button value="cancel" class="btn btn-ghost" type="button" id="changePwdCancel">Cancel</button>
+      <button value="save" class="btn btn-primary" type="submit">Update password</button>
+    </footer>
+  </form>
+</dialog>
+
+<script src="/js/api.js"></script>
+<script src="/js/ui.js"></script>
+<script src="/js/pages.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>
