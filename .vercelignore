@@ -1,0 +1,8 @@
+# Ignore everything except what's needed for deployment
+backend/node_modules
+backend/data
+backend/.env
+*.log
+.DS_Store
+*.sqlite
+*.db

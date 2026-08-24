@@ -1,0 +1,13 @@
+{
+  "name": "college-erp",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "cd backend && npm run dev",
+    "build": "echo 'No build step required for vanilla JS frontend'",
+    "start": "cd backend && npm start"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}
